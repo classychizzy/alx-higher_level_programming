@@ -9,7 +9,9 @@ def roman_to_int(roman_string):
 
     for i in rom_1:
         if i in data:
-            count += former * 2
+            count += data[i]
+            if data[i] > former:
+                count -= former * 2
             former = data[i]
         else:
             return 0
