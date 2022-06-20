@@ -9,11 +9,11 @@ def list_division(my_list_1, my_list_2, list_length):
             tempResult = 0
             print("wrong type")
         except ZeroDivisionError:
-            my_list_2[i] = 0
+            tempResult = 0
             print("division by 0")
         except IndexError:
-            if len(my_list_1) < list_length or len(my_list_2) < list_length:
-                print("out of range")
+            tempResult = 0
+            print("out of range")
         finally:
             pass
         length.append(tempResult)
