@@ -2,6 +2,8 @@
 class Square:
     """a class that prints a square,
     private attributes size and position
+    public attributes my_print prints the output to
+    the stdout and area resolves the square of the size
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -11,12 +13,12 @@ class Square:
 
     @property
     def size(self):
-        """Retrieves the size."""
+        """getter for the size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the size to a value."""
+        """Setter sets the size to a value."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -25,12 +27,12 @@ class Square:
 
     @property
     def position(self):
-        """Retrieves the position."""
+        """getter for the position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets the position to a value."""
+        """Setter sets the position to a value."""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(value[0], int) or not isinstance(value[1], int):
