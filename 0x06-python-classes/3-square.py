@@ -4,6 +4,8 @@ within a class"""
 
 
 class Square:
+    """class that returns the square
+    of a private instance"""
     def __init__(self, size=0):
         """private instance size
         with exception handlers
