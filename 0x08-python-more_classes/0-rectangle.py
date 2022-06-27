@@ -1,5 +1,6 @@
 #!usr/bin/python3
-""" a class that defines a rectangle """
+"""Module 0-rectangle 
+a class that defines an empty rectangle  class"""
 
 
 class Rectangle:
