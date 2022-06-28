@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module 1-rectangle
+""" Module 1-rectangle
 a class that defines a rectangle"""
 
 
@@ -19,7 +19,7 @@ class Rectangle:
         def width(self):
             """retrieves the width of the rectangle"""
             return self._width
-        
+
         @width.setter
         def width(self, value):
             """sets the width of the rectangle
