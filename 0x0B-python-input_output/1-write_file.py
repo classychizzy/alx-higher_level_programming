@@ -11,7 +11,8 @@ def write_file(filename="", text=""):
     Args:
     filename: name of the file
     text: content that is placed in the file
+    Return: the number of characters
     """
-    with open("filename", "w+") as f:
+    with open("filename", "w", encoding="utf-8") as f:
         write_file = f.write(text)
-    return write_file
+        return write_file
