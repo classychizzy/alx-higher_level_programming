@@ -5,7 +5,6 @@ import unittest
 from models.base import Base
 
 
-
 class TestBase(unittest.TestCase):
     """unittest for the initialization of base class"""
     def test_None(self):
@@ -23,4 +22,3 @@ class TestBase(unittest.TestCase):
         self.assertEqual(10, Base(10).id)
         self.assertFalse('nb_objects' in dir(Base))
         self.assertFalse('__nb_objects' in dir(Base))
-
