@@ -1,3 +1,3 @@
---a sql script that lists all databases
+-- a sql script that lists all databases.
 SHOW DATABASES;
 
