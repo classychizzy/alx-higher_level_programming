@@ -2,7 +2,7 @@
 """a script that lists all state names starting
 with upper N"""
 
-
+import sys
 import MySQLdb
 
 mydb = MySQLdb.connect(
