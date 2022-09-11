@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Prints all State objects in a database.
+'''Deletes all State objects with 'a' in its name in a database.
 '''
 import sys
 from sqlalchemy import create_engine
@@ -19,6 +19,7 @@ if __name__ == '__main__':
         engine = create_engine(DATABASE_URL)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
-        result = session.query(State).all()
-        for res in result:
-            print('{}: {}'.format(res.id, res.name))
+        session.query(State).filter(State.name.like('%a%')).delete(
+            synchronize_session=False
+        )
+        session.commit()

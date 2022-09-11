@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Prints all State objects in a database.
+'''Adds a State object to a database.
 '''
 import sys
 from sqlalchemy import create_engine
@@ -19,6 +19,14 @@ if __name__ == '__main__':
         engine = create_engine(DATABASE_URL)
         Base.metadata.create_all(engine)
         session = sessionmaker(bind=engine)()
-        result = session.query(State).all()
-        for res in result:
-            print('{}: {}'.format(res.id, res.name))
+        new_state = State(name='Louisiana')
+        session.add(new_state)
+        try:
+            session.flush()
+            session.refresh(new_state)
+            if new_state.id is not None:
+                print('{}'.format(new_state.id))
+        except Exception:
+            session.rollback()
+        finally:
+            session.commit()
