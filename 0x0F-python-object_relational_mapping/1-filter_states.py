@@ -8,9 +8,9 @@ import MySQLdb
 mydb = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user="classychizzy",
-        passwd="@Chizzy2636",
-        db="hbtn_0e_0_usa"
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
         )
 
 """get cursor object"""
